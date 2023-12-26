@@ -8,10 +8,8 @@
         update_cache: yes
         name:
           - python3-pip
+          - docker.io
               
-    - name: install docker-compose
-      shell: apt install -y docker.io
-
     - name: Install docker-compose
       get_url:
         url : https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64
