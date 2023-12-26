@@ -10,7 +10,13 @@
           - python3-pip
               
     - name: install docker-compose
-      shell: apt install -y docker-compose docker.io
+      shell: apt install -y docker.io
+
+    - name: Install docker-compose
+      get_url:
+        url : https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64
+        dest: /usr/local/bin/docker-compose
+        mode: '755'
 
     - name: Start and enable Docker
       service:
