@@ -1,0 +1,23 @@
+
+- name: Provision Web Servers
+  hosts: tag_group_web
+  become: true
+  tasks:
+    - name: Install pip3, docker and docker compose
+      apt:
+        update_cache: yes
+        name:
+          - python3-pip
+          - docker
+          - docker-compose
+
+    - name: Start Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+   
+
+    - name: Run docker-compose
+      shell: docker compose -f staycationX/docker-compose.yml up -d
+   
