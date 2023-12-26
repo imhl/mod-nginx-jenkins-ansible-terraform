@@ -8,8 +8,9 @@
         update_cache: yes
         name:
           - python3-pip
-          - docker.io
-          - docker-compose-v2
+    
+    - name: install docker and docker-compose
+      shell: apt update && apt install -y docker.io docker-compose
 
     - name: Start Docker
       service:
