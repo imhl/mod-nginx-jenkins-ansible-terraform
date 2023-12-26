@@ -16,8 +16,13 @@
         name: docker
         state: started
         enabled: yes
+
+    - name: copy staycation folder to /opt
+      copy:
+        src: ../../staycationX
+        dest: /opt
    
 
     - name: Run docker-compose
-      shell: docker-compose -f staycationX/docker-compose.yml up -d
+      shell: docker-compose -f /opt/staycationX/docker-compose.yml up -d
    
