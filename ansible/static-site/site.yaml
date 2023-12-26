@@ -33,5 +33,5 @@
    
 
     - name: Run docker-compose
-      shell: docker-compose -f /opt/staycationX/docker-compose.yml up -d
+      shell: docker-compose -f /opt/staycationX/docker-compose.yml up -d --build
    
