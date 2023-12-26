@@ -19,5 +19,5 @@
    
 
     - name: Run docker-compose
-      shell: docker compose -f staycationX/docker-compose.yml up -d
+      shell: docker-compose -f staycationX/docker-compose.yml up -d
    
