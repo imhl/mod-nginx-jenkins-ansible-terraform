@@ -3,7 +3,7 @@
   hosts: tag_group_web
   become: true
   tasks:
-    - name: Install python pip and docker
+    - name: Install python pip
       apt:
         update_cache: yes
         name:
