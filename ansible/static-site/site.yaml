@@ -3,7 +3,7 @@
   hosts: tag_group_web
   become: true
   tasks:
-    - name: Install pip3, docker and docker compose
+    - name: Install python pip3
       apt:
         update_cache: yes
         name:
@@ -12,7 +12,7 @@
     - name: install docker and docker-compose
       shell: apt update && apt install -y docker.io docker-compose
 
-    - name: Start Docker
+    - name: Start and enable Docker
       service:
         name: docker
         state: started
@@ -20,6 +20,11 @@
 
     - name: print current directory
       shell: pwd && ls -la
+      register: result
+
+    - name: print result
+      debug:
+        var: result
 
     - name: copy staycation folder to /opt
       copy:
