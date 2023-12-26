@@ -10,21 +10,16 @@
           - python3-pip
     
     - name: install docker and docker-compose
-      shell: apt update && apt install -y docker.io docker-compose
+      pip:
+        name:
+          - docker
+          - docker-compose
 
     - name: Start and enable Docker
       service:
         name: docker
         state: started
         enabled: yes
-
-    - name: print current directory
-      shell: pwd && ls -la
-      register: result
-
-    - name: print result
-      debug:
-        var: result
 
     - name: copy staycation folder to /opt
       copy:
