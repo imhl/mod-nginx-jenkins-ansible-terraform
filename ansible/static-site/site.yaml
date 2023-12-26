@@ -3,16 +3,16 @@
   hosts: tag_group_web
   become: true
   tasks:
-    - name: Install python pip3
+    - name: Install python pip and docker
       apt:
         update_cache: yes
         name:
           - python3-pip
+          - docker.io
     
-    - name: install docker and docker-compose
+    - name: install docker-compose
       pip:
         name:
-          - docker
           - docker-compose
 
     - name: Start and enable Docker
