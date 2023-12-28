@@ -32,7 +32,6 @@
         src: ../../staycationX
         dest: /opt
    
-
     - name: Run docker-compose
       shell: docker-compose -f /opt/staycationX/docker-compose.yml up -d --build
    
