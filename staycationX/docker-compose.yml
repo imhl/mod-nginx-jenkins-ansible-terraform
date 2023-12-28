@@ -9,7 +9,7 @@ services:
     networks:
       - ict381network
     ports:
-      - "80:5000"
+      - "5000:5000"
 
   db:
     container_name: ict381db
@@ -21,6 +21,16 @@ services:
       - ict381network
     ports:
       - "27017:27017"
+
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    networks:
+      - ict381network
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
 
 networks:
   ict381network:
