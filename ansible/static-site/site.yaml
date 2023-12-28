@@ -22,6 +22,11 @@
         state: started
         enabled: yes
 
+    - name: copy nginx folder to /opt
+      copy:
+        src: ../../nginx
+        dest: /opt
+
     - name: copy staycation folder to /opt
       copy:
         src: ../../staycationX
