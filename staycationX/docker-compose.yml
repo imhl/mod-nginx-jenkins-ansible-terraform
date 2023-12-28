@@ -24,7 +24,7 @@ services:
 
   nginx:
     container_name: nginx
-    build: ./nginx
+    build: ../nginx
     networks:
       - ict381network
     ports:
